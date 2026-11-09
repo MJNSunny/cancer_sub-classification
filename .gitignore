@@ -1,1 +1,9 @@
 data/
+*.pkl
+*.npz
+.venv/
+.mplconfig/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+/models/혜진/artifacts/
