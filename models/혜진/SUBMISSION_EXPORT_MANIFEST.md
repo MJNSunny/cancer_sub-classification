@@ -32,3 +32,7 @@
 버전별 모델/CSV/test/sample SHA256과 검증 증거는 Git 제외 `artifacts/submission_exports/*.csv.json`에 저장했습니다. v13은 기존 CatBoost Python 환경에서 추론했습니다. v13·v16~v19 노트북 끝에 저장 모델의 선택 실행 추론 셀을 추가했습니다. 이 셀은 학습 셀을 다시 실행하지 않고도 실행할 수 있으며 저장 모델이 필요합니다. 연구 단계의 open guard는 유지하고 새 추론 프로세스에서만 test/sample을 읽습니다. 추가 셀은 선택 실행 셀이므로 실행 횟수를 이전 연구 실행 결과처럼 꾸며 넣지 않았습니다.
 
 이전 문서와 verification의 `test_opened=False`는 **당시 학습·선별·검증 실행**의 기록입니다. 이후 사용자가 승인한 이번 최종 추론과 구분하며 과거 실험 기록을 바꾸지 않았습니다. 이번 추론에 test를 썼다는 사실을 은폐하지 않습니다.
+
+## v23 고정 후속 실험 추가
+
+[혜진_submission_v23_followup_experimental.csv](../../submission/혜진_submission_v23_followup_experimental.csv)를 추가했습니다. 원래 1차 기준 미달과 별도 고정 후속 진단 통과를 구분합니다. 현재 새 실험 제출 후보이며 실제 대회 점수는 아직 없습니다. 기존 v19의 사용자 확인 Public은 0.3664759128입니다.
