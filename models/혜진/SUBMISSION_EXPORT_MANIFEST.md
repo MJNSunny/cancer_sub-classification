@@ -36,3 +36,39 @@
 ## v23 고정 후속 실험 추가
 
 [혜진_submission_v23_followup_experimental.csv](../../submission/혜진_submission_v23_followup_experimental.csv)를 추가했습니다. 원래 1차 기준 미달과 별도 고정 후속 진단 통과를 구분합니다. 현재 새 실험 제출 후보이며 실제 대회 점수는 아직 없습니다. 기존 v19의 사용자 확인 Public은 0.3664759128입니다.
+
+
+<!-- V26_EXPORT -->
+## v26 실험용 제출
+
+`submission/혜진_submission_v26_minjung_features_experimental.csv`: 고정한 combo ON 전체 train 모델에서 생성. 개선 기준 통과 `False`이며 Public은 미확인입니다. 모델·원본 CSV를 이름만 바꿔 복사하지 않았고 이전 버전은 보존했습니다. 정확한 예측 파일 검증은 `artifacts/v26/submission_verification.json`입니다.
+
+
+<!-- V27_EXPORT -->
+## v27 실험용 제출
+
+`submission/혜진_submission_v27_geneformer_proxy_experimental.csv`: 고정 both 전체 train 모델로 생성. 단순 개선 기준 통과 `False`, Public 미확인. 저장 후 재로딩·표기 동치·2,546행·ID/순서·배치 일치 확인. provenance와 확률·체크섬 기록은 artifacts/v27에 있으며 기존 버전은 보존했습니다.
+
+
+<!-- V28_EXPORT -->
+## v28 고정 혼합 실험 제출
+
+`submission/혜진_submission_v28_fixed_blend_experimental.csv`: v25/v26/v27=80/10/10. 5-fold 확인 기준 통과 `False`, Public 미확인. v25 실제 Public 0.390417094와 로컬 검증을 구분합니다. 형제 라벨 반전 없음. 최종 확률·ID·순서·배치·체크섬 기록은 artifacts/v28/submission_verification.json입니다.
+
+
+<!-- V29_EXPORT -->
+## v29 축소 모델 실험 제출
+
+`submission/혜진_submission_v29_pruned_experimental.csv`: 선택된 9개 모델만 전체 train에서 새로 학습해 생성. 성능 유지 확인 기준 `True`, Public 미확인. 기존 v25 0.390417094와 구분합니다. 검증·비용·원래 비중·확률/ID/배치 기록은 artifacts/v29에 보존했습니다.
+
+
+<!-- V30_EXPORT -->
+## v30 최종 공유4개 D 실험
+
+`submission/혜진_submission_v30_compact_experimental.csv`: rich_lr|rich_lgb|rare_cnb|aug_ova, 4개. A/B/C/D 개발 비교로 선택했으므로 독립 최종 평가 아님. 그룹5-fold 평균 F1 0.489216, v29 대비 +0.001564, 개선 기준 False. A/B/C 일부 결과와 과거4개 recipe를 참고한 적응적 후속이며 외부 독립 확인이 아닙니다. Public 미확인, 기존 제출을 덮어쓰지 않습니다. 최종 고정 후 추론만 test에 적용했습니다.
+
+
+<!-- V31_EXPORT -->
+## v31 반복nested 실험
+
+`submission/혜진_submission_v31_compact_experimental.csv`: 고정4개, `baseline`. nested선택절차 평균 F1 0.492889, 같은fold v30기준 0.497543, 차이 -0.004654, 개선기준 False. 마지막구성은별도개발inner선택으로정했으며 이nested점수를고정구성독립성능으로붙이지않습니다. 최종설정변경 False, v30 CSV와hash일치 True. Public미확인, 기존모델/CSV보존.
