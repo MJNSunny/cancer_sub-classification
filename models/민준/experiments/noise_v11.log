@@ -1,0 +1,101 @@
+{
+ "EXP": "noise_v11",
+ "DATA_DIR": ".",
+ "SEED": 42,
+ "N_FOLDS": 5,
+ "HGVS_LEGACY": false,
+ "NORMALIZE": true,
+ "MIN_GENE": 5,
+ "MIN_TRUNC": 3,
+ "MIN_HS": 3,
+ "LR_C": 0.1,
+ "NUM_LEAVES": 15,
+ "LGB_LR": 0.05,
+ "LGB_COLSAMPLE": 0.3,
+ "LGB_MAX_ROUNDS": 3000,
+ "LGB_PATIENCE": 100,
+ "INNER_VALID": 0.1,
+ "USE_AA": false,
+ "MIN_AA": 20,
+ "USE_XGB": false,
+ "USE_SIG": true,
+ "USE_TWIN": true,
+ "USE_GF": true,
+ "GF_DIR": "pretrained/geneformer_v2",
+ "BASE_EXP": "",
+ "TEAM_DIR": "team"
+}
+train (6201, 4386), test (2546, 4385), 클래스 26개, 불러오기 5.0s
+파싱 3.2s
+train 토큰 종류별 개수: {'silent': 64844, 'missense': 161051, 'nonsense': 13169, 'frameshift': 9767, 'other': 230, 'inframe': 3}
+Geneformer 임베딩: 유전자 4384개 중 4377개 연결 (99.8%)
+folds.csv 불러옴
+중복 프로필 그룹 451개 (샘플 1016명), 그중 라벨이 서로 다른 그룹 447개
+fold별 크기: {0: 1241, 1: 1240, 2: 1240, 3: 1240, 4: 1240}
+fold0 | 피처 9734 | LGB it=94 F1=0.4472 | LR F1=0.3975 | 섞음 F1=0.4790 | 78s
+fold1 | 피처 9525 | LGB it=117 F1=0.4653 | LR F1=0.4402 | 섞음 F1=0.4900 | 75s
+fold2 | 피처 9317 | LGB it=114 F1=0.4655 | LR F1=0.4024 | 섞음 F1=0.4876 | 74s
+fold3 | 피처 9716 | LGB it=114 F1=0.4905 | LR F1=0.4244 | 섞음 F1=0.5198 | 72s
+fold4 | 피처 9610 | LGB it=106 F1=0.4576 | LR F1=0.4031 | 섞음 F1=0.4813 | 66s
+
+[noise_v11] CV Macro F1 = 0.4972 (LGB 0.4649, LR 0.4196) | fold별 [0.479, 0.49, 0.4876, 0.5198, 0.4813] ± 0.0147
+누수 검사 1~3 통과
+              precision    recall  f1-score   support
+
+         ACC      0.947     0.750     0.837        72
+        BLCA      0.565     0.375     0.451       104
+        BRCA      0.679     0.441     0.535       786
+        CESC      0.324     0.355     0.338       155
+        COAD      0.797     0.704     0.748       223
+        DLBC      1.000     0.395     0.566        38
+      GBMLGG      0.541     0.373     0.442       461
+        HNSC      0.394     0.381     0.387       223
+       KIPAN      0.422     0.390     0.406       515
+        KIRC      0.415     0.395     0.405       334
+        LAML      0.506     0.500     0.503       158
+         LGG      0.473     0.699     0.564       229
+        LIHC      0.448     0.411     0.429       158
+        LUAD      0.480     0.386     0.428       184
+        LUSC      0.607     0.669     0.636       178
+          OV      0.349     0.593     0.439       253
+        PAAD      0.339     0.350     0.344       120
+        PCPG      0.215     0.388     0.277       147
+        PRAD      0.298     0.440     0.356       266
+        SARC      0.188     0.253     0.216       198
+        SKCM      0.869     0.815     0.841       276
+        STES      0.569     0.575     0.572       379
+        TGCT      0.510     0.621     0.560       124
+        THCA      0.787     0.614     0.690       324
+        THYM      0.250     0.418     0.313        98
+        UCEC      0.668     0.621     0.644       198
+
+    accuracy                          0.492      6201
+   macro avg      0.525     0.497     0.497      6201
+weighted avg      0.529     0.492     0.500      6201
+
+가장 많이 헷갈린 쌍 (정답 → 예측):
+  GBMLGG → LGG: 163
+  KIPAN → KIRC: 139
+  BRCA → OV: 106
+  KIRC → KIPAN: 103
+  BRCA → PRAD: 56
+  BRCA → PCPG: 48
+  LGG → GBMLGG: 43
+  KIPAN → PRAD: 36
+  BRCA → SARC: 36
+  THCA → PRAD: 35
+seed0: 규칙 적용 OOF F1 0.5399 (+0.0427) | 발동 687행 (11.1%), 발동 행 정답률 0.997 | 채택 True
+seed1: 규칙 적용 OOF F1 0.5392 (+0.0420) | 발동 687행 (11.1%), 발동 행 정답률 0.997 | 채택 True
+seed2: 규칙 적용 OOF F1 0.5415 (+0.0444) | 발동 713행 (11.5%), 발동 행 정답률 0.997 | 채택 True
+팀원 파일 없음 → 우리 모델(v11)만 사용
+  v11          OOF F1 = 0.4972
+최종 선택: v11
+  [shape] 거부: 크기 (100, 26)/(2546, 26) (기대 (6201, 26)/(2546, 26))
+  [perm] 거부: OOF F1 0.022 < 0.2 (열 순서 확인 필요)
+쌍둥이 규칙 적용: test 222행
+저장: out\noise_v11\submission.csv
+예측 암종 분포: {'STES': 536, 'COAD': 430, 'KIPAN': 209, 'BRCA': 142, 'OV': 126, 'GBMLGG': 103, 'KIRC': 98, 'PRAD': 95, 'SKCM': 92, 'UCEC': 82, 'THCA': 69, 'LGG': 60, 'PCPG': 57, 'SARC': 54, 'LIHC': 51, 'HNSC': 50, 'LUAD': 49, 'THYM': 48, 'CESC': 39, 'TGCT': 35, 'LAML': 33, 'BLCA': 28, 'LUSC': 21, 'PAAD': 19, 'ACC': 15, 'DLBC': 5}
+[잡음] 원본       | 섞음 0.4972 | LGB 0.4649 | LR 0.4196 | 예측 상위 {'BRCA': 0.08, 'KIPAN': 0.08, 'OV': 0.07}
+[잡음] 고장 +1배   | 섞음 0.3331 | LGB 0.2979 | LR 0.3160 | 예측 상위 {'STES': 0.19, 'KIPAN': 0.07, 'BRCA': 0.06}
+[잡음] 고장 +3배   | 섞음 0.1631 | LGB 0.1311 | LR 0.1760 | 예측 상위 {'STES': 0.31, 'UCEC': 0.09, 'SKCM': 0.08}
+[잡음] 표기 중복    | 섞음 0.4640 | LGB 0.4218 | LR 0.4201 | 예측 상위 {'STES': 0.08, 'KIPAN': 0.08, 'BRCA': 0.07}
