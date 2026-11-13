@@ -1,0 +1,15 @@
+{
+  "best": {
+    "version": "v17_without_combos",
+    "alpha": 1.0,
+    "C": 0.1,
+    "mode": "base",
+    "ablate": "USE_COMBOS",
+    "xgb_weight": 0.4,
+    "cv_macro_f1": 0.4694511564910411,
+    "seconds": 29.9
+  },
+  "seed_ensemble": true,
+  "seed_ensemble_cv": 0.46959099957995554,
+  "selection_uses": "development CV only; holdout not evaluated yet"
+}

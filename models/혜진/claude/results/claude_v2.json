@@ -1,0 +1,62 @@
+{
+  "version": "claude_v2",
+  "tag": "",
+  "cfg": {
+    "AUG_NOISE": false,
+    "GENE_MODE": "all",
+    "INNER_ES": true,
+    "FULL_REFIT": true,
+    "XGB_LR": 0.08,
+    "XGB_SEEDS": [
+      42
+    ],
+    "USE_LGB": false,
+    "LR_CS": [
+      0.1
+    ],
+    "USE_PAIR_BIAS": false,
+    "PROFILE_WEIGHT": false
+  },
+  "per_model": {
+    "xgb": 0.45563069722521726,
+    "lr": 0.42386129065794037
+  },
+  "per_model_noise": {
+    "xgb": 0.23846748953787467,
+    "lr": 0.3067092357536238
+  },
+  "weights": {
+    "xgb": 0.3,
+    "lr": 0.7
+  },
+  "iters": {
+    "xgb": [
+      240,
+      201,
+      256,
+      212,
+      230
+    ]
+  },
+  "lr_C": 0.1,
+  "oof_model": 0.4708520596485902,
+  "oof_model_acc": 0.4515400741815836,
+  "oof_noise": 0.3025093342873767,
+  "oof_dup": 0.5367720146271897,
+  "oof_final_nested": 0.5367720146271897,
+  "scale_applied": false,
+  "pair_applied": false,
+  "dup_applied": true,
+  "test_pred_top": {
+    "COAD": 556,
+    "STES": 342,
+    "KIPAN": 178,
+    "BRCA": 134,
+    "OV": 132,
+    "GBMLGG": 113,
+    "PRAD": 108,
+    "KIRC": 103
+  },
+  "test_coad": 556,
+  "elapsed_cv_sec": 606.7431800365448
+}

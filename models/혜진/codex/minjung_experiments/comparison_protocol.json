@@ -1,0 +1,25 @@
+{
+  "v19_train_sha256_verified": "92418b8441d058cfc68e939dd88725610750be4bc8edc51253cffc72fc4fc0ab",
+  "comparison_source_sha256": "6888c32fa877d4a76d362a5cdf0d2726159c5d3ffb99652e98639fa5f3c21b98",
+  "input_artifact_sha256": {
+    "models/\ud61c\uc9c4/codex/minjung_experiments/holdout_predictions.npz": "47ef138ab7bc2d5b3a04a7d83e7eb79ae83cefc8ce81bdfe91eaf3b5e6b942b1",
+    "models/\ud61c\uc9c4/codex/minjung_experiments/split_indices.npz": "9d95de4773092a1526fd9b0e2b92ea32669645cc0a326d0185a314c112803621",
+    "models/\ud61c\uc9c4/codex/minjung_experiments/v19_selected_seed_ensemble.ipynb": "9f7362ed6c1e77ecff65a31b15c5378337f42d0d7ec847ebe7720536690baa62",
+    "models/\ud61c\uc9c4/claude/model_\ubbfc\uc815_v10_claude_v4.ipynb": "7a4cc6957cf5fcdd7412c3bb4712da0631de06fedc0fef22b02107fe04b0b14e"
+  },
+  "test_read_or_submission": false,
+  "frozen_comparison": {
+    "claude_weights": {
+      "xgb": 0.1,
+      "lgb": 0.5,
+      "lr": 0.4
+    },
+    "claude_C": 0.1,
+    "claude_seeds": [
+      42,
+      7
+    ],
+    "inner_group_split_seed": 271828,
+    "v19_cached_holdout_predictions": true
+  }
+}

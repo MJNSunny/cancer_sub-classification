@@ -1,0 +1,29 @@
+{
+  "selection": {
+    "best": {
+      "version": "v17_without_combos",
+      "alpha": 1.0,
+      "C": 0.1,
+      "mode": "base",
+      "ablate": "USE_COMBOS",
+      "xgb_weight": 0.4,
+      "cv_macro_f1": 0.4694511564910411,
+      "seconds": 29.9
+    },
+    "seed_ensemble": true,
+    "seed_ensemble_cv": 0.46959099957995554,
+    "selection_uses": "development CV only; holdout not evaluated yet"
+  },
+  "holdout": {
+    "n": 1243,
+    "baseline_macro_f1": 0.49750782607663435,
+    "selected_macro_f1": 0.5009761045594405,
+    "selected_accuracy": 0.47948511665325827
+  },
+  "external_score_reference": 0.47959,
+  "notes": [
+    "Internal scores are not leaderboard scores.",
+    "Holdout previously may have been seen in team experiments.",
+    "No duplicate-label override; no test fit; no validation early stopping."
+  ]
+}
