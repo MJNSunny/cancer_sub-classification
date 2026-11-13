@@ -1,0 +1,5 @@
+context,label,prob,n
+"('KIRC',)",KIPAN,1.0,270
+"('KIPAN',)",KIRC,0.9926470588235294,272
+"('GBMLGG',)",LGG,1.0,173
+"('LGG',)",GBMLGG,1.0,173
