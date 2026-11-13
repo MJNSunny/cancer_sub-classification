@@ -1,0 +1,28 @@
+# 소스 코드, 노트북, 보고서, 실행 환경, 작은 결과 요약은 Git에 포함합니다.
+# 생성 산출물은 로컬에 보관합니다. 이 규칙은 models/혜진/ 안에서만 적용됩니다.
+/artifacts/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+.venv/
+.venv-*/
+*.py[cod]
+
+# 학습된 모델과 예측 배열·캐시를 제외합니다.
+*.pkl
+*.pickle
+*.joblib
+*.npy
+*.npz
+*.pt
+*.pth
+*.onnx
+*.ubj
+*.h5
+*.hdf5
+
+# 생성된 제출·조회표 CSV와 실행 로그를 제외합니다.
+*.csv
+!development_results.csv
+*.log
+*_classification.txt

@@ -1,0 +1,40 @@
+{
+  "data_sha256": {
+    "train.csv": "92418b8441d058cfc68e939dd88725610750be4bc8edc51253cffc72fc4fc0ab",
+    "test.csv": "e7e7f29a9b6251308e470ae3fb040a6da0cd8fcb0adb87e67f7761631c6a1ef0"
+  },
+  "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 17.0.0 (clang-1700.6.4.2)]",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "sklearn": "1.9.1",
+    "scipy": "1.18.1",
+    "xgboost": "3.4.1"
+  },
+  "selection": {
+    "best": {
+      "version": "v17_without_combos",
+      "alpha": 1.0,
+      "C": 0.1,
+      "mode": "base",
+      "ablate": "USE_COMBOS",
+      "xgb_weight": 0.4,
+      "cv_macro_f1": 0.4694511564910411,
+      "seconds": 29.9
+    },
+    "seed_ensemble": true,
+    "seed_ensemble_cv": 0.46959099957995554,
+    "selection_uses": "development CV only; holdout not evaluated yet"
+  },
+  "test_used_only_for": "transform and prediction after frozen selection",
+  "submissions_to_dacon": 0,
+  "source_sha256": {
+    "run_experiments.py": "47df35983ddb56c3899b3098d226e92593dcfc30494197eb7f7d5dddf095d5a1",
+    "audit_pipeline.py": "fd83c4ea5b178adb4121ba6fb7ef0d1ddcf1e015e4ee48898f0fcb50951270d4",
+    "package_notebooks.py": "093b089ede1112fa3e970eb80415f3b855fd422f7bd68a75b05bce0538027262",
+    "package_selected.py": "e7d454e65b367ff6315385b743db2f335c60027ea86fe0eca87b69e427238cbd",
+    "build_report.py": "d1c4ed8e8156766bf2283e3a12bd4c5bbf766fec3a4e9fd8d663114097bba9eb"
+  },
+  "original_notebook_sha256": "97abd865548af808698f478fa11ab533300951461211c267b9aeb595f363e258",
+  "submission_sha256": "72fa8302061305b021375f5e314e01e8b673c84e9126534380191a5ec94e4c9a"
+}

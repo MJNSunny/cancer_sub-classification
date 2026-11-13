@@ -1,0 +1,58 @@
+{
+  "n_train": 4958,
+  "n_holdout": 1243,
+  "v19_macro_f1": 0.5009761045594405,
+  "claude_v4_core_macro_f1": 0.5001173967727616,
+  "delta_claude_minus_v19": -0.0008587077866789583,
+  "paired_group_bootstrap_95pct_delta": [
+    -0.0235839916292562,
+    0.018867550319949723
+  ],
+  "iterations": {
+    "xgb": [
+      {
+        "seed": 42,
+        "inner_best": 338,
+        "refit_rounds": 389
+      },
+      {
+        "seed": 7,
+        "inner_best": 339,
+        "refit_rounds": 390
+      }
+    ],
+    "lgb": [
+      {
+        "seed": 42,
+        "inner_best": 103,
+        "refit_rounds": 118
+      },
+      {
+        "seed": 7,
+        "inner_best": 110,
+        "refit_rounds": 126
+      }
+    ]
+  },
+  "claude_weights": {
+    "xgb": 0.1,
+    "lgb": 0.5,
+    "lr": 0.4
+  },
+  "claude_lr_C": 0.1,
+  "claude_per_model": {
+    "xgb": 0.48173058269199254,
+    "lgb": 0.477474566415976,
+    "lr": 0.4385808362370058
+  },
+  "winner": "v19",
+  "source_sha256": "7a4cc6957cf5fcdd7412c3bb4712da0631de06fedc0fef22b02107fe04b0b14e",
+  "train_sha256": "92418b8441d058cfc68e939dd88725610750be4bc8edc51253cffc72fc4fc0ab",
+  "caveats": [
+    "Same group holdout as v19; v19 cached predictions reused.",
+    "v4 adapted to train-internal grouped early stopping; not exact original random 5-fold pipeline.",
+    "v4 existing hyperparameters/weights were selected using full train OOF; holdout therefore is not untouched for v4 model development.",
+    "Both pipelines previously saw team data during development; no new external test.",
+    "No duplicate override, test file, or leaderboard submission used in this comparison."
+  ]
+}

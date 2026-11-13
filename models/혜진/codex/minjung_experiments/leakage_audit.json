@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "notebook_source_sha256": "eeb97af3fd7deb50c621fe623595722e3ab662cc71a352f9320dfae3eba7916e",
+  "published_notebook_sha256": "240cf41d1c0c194f5a78063c21f45b2192a4a040bbb979d62a666397fa6f9711",
+  "n_dev": 4958,
+  "n_holdout": 1243,
+  "checks": [
+    "Notebook code and markdown preserved; dataset preview output removed",
+    "No overlapping rows between development and holdout",
+    "3-fold partition covers development exactly once",
+    "Canonical profile group non-overlap asserted in runner",
+    "Unknown query tokens ignored",
+    "Query outliers cannot alter scaler or IDF",
+    "Test CSV read after frozen selection",
+    "No outer validation early stopping",
+    "No duplicate-label override"
+  ],
+  "limits": [
+    "Static and synthetic checks do not establish competition-specific approval.",
+    "Existing team work may have previously used holdout rows.",
+    "Selection CV has tuning bias; confirmatory holdout is separate."
+  ]
+}
