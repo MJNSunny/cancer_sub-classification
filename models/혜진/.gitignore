@@ -26,3 +26,9 @@ __pycache__/
 !development_results.csv
 *.log
 *_classification.txt
+
+# 이전 버전의 대용량 변수 목록·유전자 사전은 로컬과 Git 이력에 보존합니다.
+# 대표 결과인 v29의 변수 목록만 현재 저장소에 포함합니다.
+/selected_variables*.md
+!/selected_variables_v29.md
+/gene_dictionary*.md
